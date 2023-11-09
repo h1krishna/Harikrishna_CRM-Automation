@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Testcases.Usertypes_Test">
+      <class name="com.Testcases.Location_Test">
         <methods>
-          <include name="validateaddnewUsertype"/>
-          <include name="adduser"/>
           <include name="setup"/>
-          <include name="edituser"/>
+          <include name="validateLocation"/>
         </methods>
-      </class> <!-- com.Testcases.Usertypes_Test -->
+      </class> <!-- com.Testcases.Location_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
