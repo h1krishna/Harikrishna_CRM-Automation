@@ -31,7 +31,24 @@ public class Utils extends Test_base {
 		Actions ac = new Actions(driver);
 		ac.moveToElement(element).click().perform();
 	}
-
+public Object[][] ReaddataFromExcel(String sheetname) throws Throwable {
+	File fi=new File("./src/main/java/com/testdata/crm (1).xlsx");
+	FileInputStream stream=new FileInputStream(fi);
+	XSSFWorkbook wrkbk=new XSSFWorkbook(fi);
+	XSSFSheet sheet = wrkbk.getSheet(sheetname);
+	int rownum = sheet.getPhysicalNumberOfRows();
+	            int celnum = sheet.getRow(1).getLastCellNum();
+	           Object[][] data=new Object[rownum-1][celnum];
+	           for(int i=0;i<rownum-1;i++) {
+	        	   for(int j=0;j<celnum;j++) {
+	        		   DataFormatter df=new DataFormatter();
+	        		  data[i][j]= df.formatCellValue(sheet.getRow(i+1).getCell(j));
+	        	   }
+	        	 
+	           }
+			return data;
+	
+}
 	public static Object[][] ReadDataFromExcel(String sheetname) throws Throwable {
 		File file1 = new File("./src/main/java/com/testdata/crm (1).xlsx");
 

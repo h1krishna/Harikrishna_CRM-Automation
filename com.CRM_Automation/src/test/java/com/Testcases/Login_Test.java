@@ -55,6 +55,7 @@ public class Login_Test extends Test_base {
 	@DataProvider
 
 	public Object[][] Data() throws Throwable {
+		Utils.ReadDataFromExcel(Sheetname);
 
 		return Utils.ReadDataFromExcel(Sheetname);
 
